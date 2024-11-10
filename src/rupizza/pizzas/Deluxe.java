@@ -26,13 +26,10 @@ public class Deluxe extends Pizza {
 
     @Override
     public double price() {
-        switch (this.getSize()) {
-            case Small:
-                return SIZE_SMALL_PRICE;
-            case Medium:
-                return SIZE_MEDIUM_PRICE;
-            default:
-                return SIZE_LARGE_PRICE;
-        }
+        return switch (this.getSize()) {
+            case Small -> SIZE_SMALL_PRICE;
+            case Medium -> SIZE_MEDIUM_PRICE;
+            default -> SIZE_LARGE_PRICE;
+        };
     }
 }
